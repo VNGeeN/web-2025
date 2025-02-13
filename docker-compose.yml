@@ -1,0 +1,15 @@
+version: '3'
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/mysyte.com.conf:/etc/nginx/conf.d/mysyte.com.conf
+      - ./src:/var/www
+    depends_on:
+      - php
+  php:
+    build: ./images/php
+    volumes:
+      - ./src:/var/www
