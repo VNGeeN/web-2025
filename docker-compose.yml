@@ -1,12 +1,14 @@
 version: '3'
 services:
   nginx:
-    image: nginx:latest
+    build: ./images/nginx
     ports:
       - "80:80"
     volumes:
       - ./nginx/mysyte.com.conf:/etc/nginx/conf.d/mysyte.com.conf
       - ./src:/var/www
+    environment:
+      - MY_VAR=value
     depends_on:
       - php
   php:
