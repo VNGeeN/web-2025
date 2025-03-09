@@ -1,0 +1,135 @@
+@font-face {
+    font-family: "Golos-UI Bold";
+    src: url(../../fonts/Golos-UI_Bold.ttf);
+}
+
+@font-face {
+    font-family: "Golos-UI Medium";
+    src: url(../../fonts/Golos-UI_Medium.ttf);
+}
+
+@font-face {
+    font-family: "Golos-UI Regular";
+    src: url(../../fonts/Golos-UI_Regular.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main-container {
+    display: flex;
+    height: 100vh;
+}
+
+.side-bar {
+    padding: 40px 16px;
+    max-width: 72px;
+    height: 100%;
+    border-right: 1px solid #2222220d;
+}
+
+.menu__list {
+    padding-bottom: 12px;
+    list-style: none;
+}
+
+.container {
+    margin-top: 89px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 474px;
+    position: relative;
+    right: 36px;
+}
+
+.card {
+    margin-bottom: 36px;
+}
+
+.card__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.card__author-info {
+    display: flex;
+    align-items: center;
+}
+
+.card__name {
+    margin-left: 10px;
+    font: 500 14px/1 "Golos-UI Medium", sans-serif;
+    letter-spacing: -0.15px;
+}
+
+.card__redactor-button {
+    width: 24px;
+    height: 24px;
+}
+
+.card__media {
+    position: relative;
+    margin-bottom: 16px;
+    object-fit: cover;
+    width: 474px;
+    height: 474px;
+}
+
+.card__note {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #ffffff;
+}
+
+.card__reaction {
+    margin-bottom: 16px;
+}
+
+.card__like {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 68px;
+    height: 30px;
+    background-color: #2222220d;
+    border-radius: 8px;
+}
+
+.card__reaction-count {
+    margin-left: 3px;
+    margin-top: 3px;
+    font: 400 15px / 18px "Golos-UI Regilar", sans-serif;
+    letter-spacing: -0.15px;
+}
+
+.card__button-more {
+    margin-bottom: 8px;
+    border: 0;
+    background-color: #ffffff;
+    font: 400 15px / 18px "Golos-UI Regular", sans-serif;
+    letter-spacing: -0.15px;
+}
+
+.card__text {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font: 400 15px / 18px "Golos-UI Regular", sans-serif;
+    letter-spacing: -0.15px;
+}
+
+.card__description {}
+
+.card__post-time {
+    margin-bottom: 20px;
+    font: 400 14px / 18px "Golos-UI Regular", sans-serif;
+    letter-spacing: -0.15px;
+}

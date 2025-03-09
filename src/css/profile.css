@@ -1,0 +1,111 @@
+@font-face {
+    font-family: "Golos-UI Bold";
+    src: url(../../fonts/Golos-UI_Bold.ttf);
+}
+
+@font-face {
+    font-family: "Golos-UI Medium";
+    src: url(../../fonts/Golos-UI_Medium.ttf);
+}
+
+@font-face {
+    font-family: "Golos-UI Regular";
+    src: url(../../fonts/Golos-UI_Regular.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main-container {
+    display: flex;
+    height: 100vh;
+}
+
+.side-bar {
+    padding: 40px 16px;
+    max-width: 72px;
+    height: 100%;
+    border-right: 1px solid #2222220d;
+}
+
+.menu__list {
+    padding-bottom: 12px;
+    list-style: none;
+}
+
+.container {
+    margin-top: 97px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 972px;
+    position: relative;
+    right: 35px;
+}
+
+.profile__head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 42px;
+}
+
+.profile__author-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.profile__avatar {
+    margin-bottom: 20px;
+    border-radius: 16px;
+    object-fit: cover;
+    width: 123px;
+    height: 123px;
+}
+
+.profile__name {
+    margin-bottom: 10px;
+    font: 500 32px/1 "Golos-UI Medium", sans-serif;
+    letter-spacing: -0.25px;
+}
+
+.profile__descriprion {
+    max-width: 361px;
+    max-height: 36px;
+    text-align: center;
+    font: 400 15px / 18px "Golos-UI Regular", sans-serif;
+    letter-spacing: -0.15px;
+}
+
+.profile__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    width: 101px;
+    height: 30px;
+    background-color: #2222220d;
+    border-radius: 6px;
+}
+
+.profile__count-posts {
+    font: 400 15px / 18px "Golos-UI Regular", sans-serif;
+    letter-spacing: -0.15px;
+}
+
+.profile__post-info-text {
+    font: 400 15px / 18px "Golos-UI Regular", sans-serif;
+    letter-spacing: -0.15px;
+}
+
+.profile__mosaic {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.profile__mosaic-img {}

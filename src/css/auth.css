@@ -1,0 +1,128 @@
+@font-face {
+    font-family: 'Golos-UI Bold';
+    src: url(../../fonts/Golos-UI_Bold.ttf);
+}
+
+@font-face {
+    font-family: 'Golos-UI Medium';
+    src: url(../../fonts/Golos-UI_Medium.ttf);
+}
+
+@font-face {
+    font-family: 'Golos-UI Regular';
+    src: url(../../fonts/Golos-UI_Regular.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.auth {
+    display: flex;
+    justify-content: space-between;
+    margin: 289px auto 290px;
+    max-width: 912px;
+}
+
+.auth__face {
+    position: relative;
+}
+
+.auth__face-text {
+    position: absolute;
+    top: -86px;
+    left: -90px;
+    font: 700 140px/1 'Golos-UI Bold', sans-serif;
+    letter-spacing: -1.5px;
+}
+
+.auth__face-pic {
+    object-fit: cover;
+    width: 462px;
+    height: 501px;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 343px;
+    width: 100%;
+}
+
+.field {
+    margin-bottom: 16px;
+    width: 100%;
+}
+
+.field_last {
+    margin-bottom: 32px;
+}
+
+.field__label {
+    display: block;
+    margin-bottom: 5px;
+    font: 400 15px/18px "Golos-UI Regular", sans-serif;
+    letter-spacing: -0.15px;
+    color: #222222;
+}
+
+.field__message {
+    margin-top: 5px;
+    font: 400 13px/16px "Golos-UI Regular", sans-serif;
+    letter-spacing: -0.08px;
+    color: #808080;
+}
+
+.field__input-box {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    padding: 10px;
+    height: 44px;
+    background-color: #f2f3f5;
+}
+
+.field__input-box:focus-within {
+    outline: 1px solid #3f8ae0;
+}
+
+.field__input {
+    flex: 1;
+    border: 0;
+    padding: 0 2px;
+    background-color: transparent;
+    font: 400 15px/1 "Golos-UI Regular", sans-serif;
+    letter-spacing: -0.15px;
+    color: #222222;
+    outline: none;
+}
+
+.field__eye-button {
+    margin-right: 2px;
+    border: 0;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    background-image: url("../../assets/icons/eye-off.svg");
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.field__eye-button-active {
+    background-image: url("../../assets/icons/eye.svg");
+}
+
+.field__submit {
+    border-radius: 10px;
+    background-color: #222222;
+    border: none;
+    text-align: center;
+    font: 500 16px/1 "Golos-UI Regular", sans-serif;
+    padding: 16px;
+    color: #FFFFFF;
+}
