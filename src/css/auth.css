@@ -1,18 +1,3 @@
-@font-face {
-    font-family: 'Golos-UI Bold';
-    src: url(../../fonts/Golos-UI_Bold.ttf);
-}
-
-@font-face {
-    font-family: 'Golos-UI Medium';
-    src: url(../../fonts/Golos-UI_Medium.ttf);
-}
-
-@font-face {
-    font-family: 'Golos-UI Regular';
-    src: url(../../fonts/Golos-UI_Regular.ttf);
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -125,4 +110,6 @@
     font: 500 16px/1 "Golos-UI Regular", sans-serif;
     padding: 16px;
     color: #FFFFFF;
+    cursor: pointer;
 }
+

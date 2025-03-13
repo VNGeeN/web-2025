@@ -5,78 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Авторизация</title>
-    <link rel="stylesheet" href="../css/auth.css">
+    <link rel="stylesheet" href="../css/fonts.css" />
+    <link rel="stylesheet" href="../css/auth.css" />
   </head>
   <body>
-    <div class="auth">
-      <div class="auth__face">
-        <p class="auth__face-text">Войти</p>
-        <img
-          class="auth__face-pic"
-          src="../../assets/unsplash_3Y366aqddJ0.png"
-          alt="Улыбающийся турист на поле"
-          width="501px"
-          height="462px"
-        />
+    <main class="main">
+      <div class="auth">
+        <div class="auth__face">
+          <p class="auth__face-text">Войти</p>
+          <img
+            class="auth__face-pic"
+            src="../../assets/login.png"
+            alt="Улыбающийся турист на поле"
+          />
+        </div>
+        <form class="auth-form" method="post">
+          <div class="field">
+            <label class="field__label" for="email">Электропочта</label>
+            <div class="field__input-box">
+              <input
+                id="email"
+                class="field__input"
+                type="email"
+                name="email"
+                required
+              />
+            </div>
+            <div class="field__message">
+              Введите электропочту в формате *****@***.**
+            </div>
+          </div>
+          <div class="field field_last">
+            <label class="field__label" for="password"> Пароль </label>
+            <div class="field__input-box">
+              <input
+                id="password"
+                class="field__input"
+                type="password"
+                name="password"
+                required
+              />
+              <button
+                id="eye-button"
+                type="button"
+                class="field__eye-button"
+              ></button>
+            </div>
+          </div>
+          <button type="submit" class="field__submit">Продолжить</button>
+        </form>
       </div>
-      <form class="auth-form" method="post">
-        <div class="field">
-          <label class="field__label" for="email">Электропочта</label>
-          <div class="field__input-box">
-            <input
-              id="email"
-              class="field__input"
-              type="email"
-              name="email"
-              required
-            />
-          </div>
-          <div class="field__message">
-            Введите электропочту в формате *****@***.**
-          </div>
-        </div>
-        <div class="field field_last">
-          <label class="field__label" for="password"> Пароль </label>
-          <div class="field__input-box">
-            <input id="password" class="field__input"
-              type="password"
-              name="password"
-              required
-            />
-            <button
-              id="eye-button"
-              type="button"
-              class="field__eye-button">
-            </button>
-          </div>
-        </div>
-        <button type="submit" class="field__submit">
-          Продолжить
-        </button>
-      </form>
-    </div>
-    <script>
-      let isPasswordShown = false;
-
-      const togglePasswordVisibility = (event) => {
-        const button = event.target;
-        const input = document.getElementById("password");
-
-        isPasswordShown = !isPasswordShown;
-
-        if (isPasswordShown) {
-          input?.setAttribute("type", "text");
-          button?.classList.add("field__eye-button-active");
-        } else {
-          input?.setAttribute("type", "password");
-          button?.classList.remove("field__eye-button-active");
-        }
-      };
-
-      document.addEventListener("DOMContentLoaded", () => {
-        const eyeButton = document.getElementById("eye-button");
-        eyeButton.addEventListener("click", togglePasswordVisibility);
-      });
-    </script>
+    </main>
+    <script src="../js/auth.js"></script>
   </body>
 </html>
