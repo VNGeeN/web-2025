@@ -17,8 +17,23 @@
 }
 
 .menu__list {
+    display: flex;
+    justify-content: center;
     padding-bottom: 12px;
     list-style: none;
+    position: relative;
+}
+
+.menu__list.select::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 4px;
+    height: 4px;
+    background-color: #000000;
+    border-radius: 50%;
+    bottom: 6px;
+    left: calc(50% - 2px);
 }
 
 .container {
@@ -93,4 +108,7 @@
     justify-content: space-between;
 }
 
-.profile__mosaic-img {}
+.profile__mosaic-img {
+    max-width: 322.35px;
+    max-height: 322.35px;
+}

@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.exercise {
+    text-align: center;
+}
+
+.rpn {
+    width: 300px;
+    border: 3px solid black;
+    margin-bottom: 20px;
+}
+
+.rpn__input {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.rpn__input-box {
+    margin-bottom: 10px;
+}

@@ -17,8 +17,23 @@
 }
 
 .menu__list {
+    display: flex;
+    justify-content: center;
     padding-bottom: 12px;
     list-style: none;
+    position: relative;
+}
+
+.menu__list.select::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 4px;
+    height: 4px;
+    background-color: #000000;
+    border-radius: 50%;
+    bottom: 6px;
+    left: calc(50% - 2px);
 }
 
 .container {
@@ -44,6 +59,12 @@
 .card__author-info {
     display: flex;
     align-items: center;
+}
+
+.card__avatar {
+    max-width: 32px;
+    max-height: 32px;
+    border-radius: 6px;
 }
 
 .card__name {
