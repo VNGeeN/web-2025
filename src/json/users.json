@@ -1,0 +1,46 @@
+[
+    {
+        "id": 1,
+        "name": "Ivan",
+        "surname": "Denisof",
+        "profile_properties": {
+            "avatar": "../../assets/vanya-denisof-profile-avatar.png",
+            "profile_name": "Ваня Денисов",
+            "user_about": "Привет! Я системный аналитик в АСМЕ :) Тут моя жизнь только для самых класных!"
+        },
+        "user_posts": {
+            "posts": [
+                "../../assets/Frame-22.png",
+                "../../assets/Frame-23.png",
+                "../../assets/Frame-24.png",
+                "../../assets/Frame-25.png",
+                "../../assets/Frame-26.png",
+                "../../assets/Frame-27.png",
+                "../../assets/Frame-28.png",
+                "../../assets/Frame-29.png",
+                "../../assets/Frame-30.png",
+                "../../assets/Frame-31.png",
+                "../../assets/Frame-32.png",
+                "../../assets/Frame-33.png",
+                "../../assets/Frame-34.png",
+                "../../assets/Frame-35.png",
+                "../../assets/Frame-36.png"
+            ]
+        }
+    },
+    {
+        "id": 2,
+        "name": "Liza",
+        "surname": "Demina",
+        "profile_properties": {
+            "avatar": "../../assets/liza-demina-avatar.png",
+            "profile_name": "Лиза Дёмина",
+            "user_about": ""
+        },
+        "user_posts": {
+            "posts": [
+                "../../assets/Photo-2.png"
+            ]
+        }
+    }
+]

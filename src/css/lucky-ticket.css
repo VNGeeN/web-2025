@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.exercise {
+    text-align: center;
+}
+
+.lucky-ticket {
+    width: 300px;
+    border: 3px solid black;
+    margin-bottom: 20px;
+}
+
+.lucky-ticket__input {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.lucky-ticket__input-box {
+    margin-bottom: 10px;
+}
