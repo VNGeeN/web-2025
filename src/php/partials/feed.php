@@ -1,6 +1,12 @@
 <?php
 require_once('validation.php');
 
+$id = null;
+
+if (isset($_GET['id'])) {
+    $id = filter_var($_GET['id'], FILTER_VALIDATE_INT, ['options' => ['min_range' => 1]]);
+}
+
 $page = "feed";
 $feedData = json_decode(file_get_contents('../../json/posts.json'), true);
 $userData = json_decode(file_get_contents('../../json/users.json'), true);
@@ -22,21 +28,41 @@ if (!empty($errors)) {
 }
 
 $posts = [];
-$i = 0;
-foreach ($feedData as $feed) {
-    foreach ($userData as $user) {
-        if ($feed['user_id'] === $user['id']) {
-            $posts[$feed['id']] = [
-                'profile_name' => $user['profile_properties']['profile_name'],
-                'avatar' => $user['profile_properties']['avatar'],
-                'post_picture' => $feed['post_picture'],
-                'comment' => $feed['comment'],
-                'reactions' => $feed['reactions']
-            ];
 
+if ($id === false || $id === null) {
+    $posts = postsFormalize($feedData, $userData);
+} else if ($id !== null) {
+    $feedFormolizeFromId = [];
+    $i = 1;
+    foreach ($feedData as $feed) {
+        if ($feed['user_id'] === $id) {
+            $feedFormolizeFromId[$i] = $feed;
+        }
+        $i++;
+    }
+    $posts = postsFormalize($feedFormolizeFromId, $userData);
+}
+
+function postsFormalize(array $feedData, array $userData): array
+{
+    $postsF = [];
+
+    foreach ($feedData as $feed) {
+        foreach ($userData as $user) {
+            if ($feed['user_id'] === $user['id']) {
+                $postsF[$feed['id']] = [
+                    'profile_name' => $user['profile_properties']['profile_name'],
+                    'avatar' => $user['profile_properties']['avatar'],
+                    'comment' => $feed['comment'],
+                    'post_pictures' => $feed['post_pictures'],
+                    'reactions' => $feed['reactions']
+                ];
+            }
         }
     }
+    return $postsF;
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -69,8 +95,17 @@ foreach ($feedData as $feed) {
                         </div>
                     </div>
                     <div class="card__media">
-                        <img class="card__image" src="<?= $post['post_picture'] ?>" alt="Фото в ленте" />
-                        <div class="card__note">1/3</div>
+                        <?php
+                        $total = count($post['post_pictures']);
+                        $profileName = $post['profile_name'];
+                        foreach ($post['post_pictures'] as $index => $picture):
+                            $zIndex = $total - $index;
+                            ?>
+                            <img class="card__image" src="<?= $picture ?>" alt="Фото в профиле <?= $profileName; ?>"
+                            style="z-index: <?= $zIndex ?>;"/>
+                        <?php endforeach; ?>
+
+                        <div class="card__note" style="z-index: <?= $total + 1 ?>">1/3</div>
                     </div>
                     <div class="card__reaction">
                         <div class="card__like">

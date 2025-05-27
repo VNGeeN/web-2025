@@ -29,7 +29,7 @@
     height: 501px;
 }
 
-.auth-form {
+.auth__form {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -37,16 +37,16 @@
     width: 100%;
 }
 
-.field {
+.auth__form-field {
     margin-bottom: 16px;
     width: 100%;
 }
 
-.field_last {
+.auth__form-field_last {
     margin-bottom: 32px;
 }
 
-.field__label {
+.auth__form-field-lable {
     display: block;
     margin-bottom: 5px;
     font: 400 15px/18px "Golos-UI Regular", sans-serif;
@@ -54,14 +54,14 @@
     color: #222222;
 }
 
-.field__message {
+.auth__form-field-message {
     margin-top: 5px;
     font: 400 13px/16px "Golos-UI Regular", sans-serif;
     letter-spacing: -0.08px;
     color: #808080;
 }
 
-.field__input-box {
+.auth__form-field-input-box {
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
@@ -72,11 +72,11 @@
     background-color: #f2f3f5;
 }
 
-.field__input-box:focus-within {
+.auth__form-field-input-box:focus-within {
     outline: 1px solid #3f8ae0;
 }
 
-.field__input {
+.auth__form-field-input {
     flex: 1;
     border: 0;
     padding: 0 2px;
@@ -87,7 +87,7 @@
     outline: none;
 }
 
-.field__eye-button {
+.auth__form-field-eye-button {
     margin-right: 2px;
     border: 0;
     padding: 0;
@@ -98,11 +98,11 @@
     cursor: pointer;
 }
 
-.field__eye-button-active {
+.auth__form-field-eye-button-active {
     background-image: url("../../assets/icons/eye.svg");
 }
 
-.field__submit {
+.auth__form-field-submit {
     border-radius: 10px;
     background-color: #222222;
     border: none;

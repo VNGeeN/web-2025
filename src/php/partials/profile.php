@@ -31,13 +31,14 @@ $input = $_GET['id'] ?? '';
 $userId = validateUserId($input);
 
 $users = json_decode(file_get_contents('../../json/users.json'), true);
+$allPosts = json_decode(file_get_contents('../../json/posts.json'), true);
 
 $errors = validateUserData($users);
 
 if (!empty($errors)) {
-    echo '<h2>Ошибки валидации пользователей:</h2>';
-    echo '<pre>' . print_r($errors, true) . '</pre>';
-    exit;
+  echo '<h2>Ошибки валидации пользователей:</h2>';
+  echo '<pre>' . print_r($errors, true) . '</pre>';
+  exit;
 }
 
 $userData = null;
@@ -47,6 +48,15 @@ foreach ($users as $user) {
     $userData = $user;
     break;
   }
+}
+
+$userPosts = array_filter($allPosts, function ($post) use ($userId) {
+  return $post['user_id'] === $userId;
+});
+
+$totalPictures = 0;
+foreach ($userPosts as $post) {
+    $totalPictures += count($post['post_pictures']);
 }
 
 if (!$userData) {
@@ -83,14 +93,18 @@ if (!$userData) {
           </div>
           <div class="profile__info">
             <img class="profile__image-icon" src="../../assets/icons/image-icon.svg" alt="Иконка картинок" />
-            <span class="profile__count-posts"><?= count($userData['user_posts']['posts']) ?? '0'; ?></span>
+            <span class="profile__count-posts"><?= $totalPictures; ?></span>
             <span class="profile__post-info-text">поста</span>
           </div>
         </div>
         <div class="profile__mosaic">
-          <?php foreach ($userData['user_posts']['posts'] as $post): ?>
-            <img class="profile__mosaic-img" src="<?= $post ?>"
-              alt="Фото в профиле <?= $userData['profile_properties']['profile_name']; ?>" />
+          <?php foreach ($userPosts as $post): ?>
+            <?php foreach ($post['post_pictures'] as $picture): ?>
+              <a href="/php/partials/feed.php?id=<?= $userId; ?>" class="profile__gallery-link">
+                <img class="profile__mosaic-img" src="<?= $picture ?>"
+                  alt="Фото в профиле <?= $userData['profile_properties']['profile_name']; ?>" />
+              </a>
+            <?php endforeach; ?>
           <?php endforeach; ?>
         </div>
       </div>

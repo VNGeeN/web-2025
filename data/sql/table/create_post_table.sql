@@ -1,0 +1,5 @@
+CREATE TABLE IF IS NOT EXISTS post(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    image VARCHAR(50),
+    
+);
