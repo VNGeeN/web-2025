@@ -27,27 +27,15 @@
     },
     {
         "id": 2,
+        "title": "sadfsdf",
         "user_id": 2,
         "post_pictures": [
-            "..\/..\/assets\/Photo-2.png"
-        ],
-        "comment": "",
-        "reactions": {
-            "like": 534
-        },
-        "timestamp": 1743516704
-    },
-    {
-        "id": 7,
-        "title": "xzcvxzc",
-        "user_id": 2,
-        "post_pictures": [
-            "..\/..\/assets\/images\/posts\/xzcvxzc-a222b.png"
+            "..\/..\/assets\/images\/posts\/sadfsdf-a61f0.png"
         ],
         "comment": "",
         "reactions": {
             "like": 0
         },
-        "timestamp": 1747838665
+        "timestamp": 1748352221
     }
 ]
