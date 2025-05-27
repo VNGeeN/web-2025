@@ -8,10 +8,10 @@ const togglePasswordVisibility = (event) => {
 
     if (isPasswordShown) {
         input?.setAttribute("type", "text");
-        button?.classList.add("field__eye-button-active");
+        button?.classList.add("auth__form-field-eye-button-active");
     } else {
         input?.setAttribute("type", "password");
-        button?.classList.remove("field__eye-button-active");
+        button?.classList.remove("auth__form-field-eye-button-active");
     }
 };
 

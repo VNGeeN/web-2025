@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS images(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    entity_type VARCHAR(20) NOT NULL,
+    filename VARCHAR(255) NOT NULL,
+    file_hash CHAR(32) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE(file_hash)
+);
+

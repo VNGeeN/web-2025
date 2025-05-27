@@ -52,14 +52,14 @@ function validateUserData(array $users): array
         }
 
         // Посты
-        if (!isset($user['user_posts']['posts'])) {
-            $userErrors['user_posts'] = 'Отсутствуют посты';
-        } else {
-            $postErrors = validateUserPosts($user['user_posts']['posts']);
-            if ($postErrors) {
-                $userErrors['user_posts'] = $postErrors;
-            }
-        }
+        // if (!isset($user['user_posts']['posts'])) {
+        //     $userErrors['user_posts'] = 'Отсутствуют посты';
+        // } else {
+        //     $postErrors = validateUserPosts($user['user_posts']['posts']);
+        //     if ($postErrors) {
+        //         $userErrors['user_posts'] = $postErrors;
+        //     }
+        // }
 
         if ($userErrors) {
             $errors["user_{$index}"] = $userErrors;
@@ -68,6 +68,7 @@ function validateUserData(array $users): array
 
     return $errors;
 }
+
 
 /**
  * Валидация данных постов в feed
@@ -99,8 +100,8 @@ function validatePostsData(array $posts): array
             $userIds[] = $post['user_id'];
         }
 
-        //Проверка пути до картинки
-        $postErrors += validateImagePath($post, 'post_picture');
+        //Проверка массива путей до картинки
+        $postErrors += validateImagePaths($post, 'post_pictures');
 
         // Проверка комментария
         if (isset($post['comment'])) {
@@ -185,6 +186,43 @@ function validateImagePath(array $data, string $field): array
 
     return $errors;
 }
+
+/**
+ * Валидация массива картинок
+ * @param array $data
+ * @param string $field
+ * @return array
+ */
+function validateImagePaths(array $data, string $field): array
+{
+    $errors = [];
+
+    if (!isset($data[$field])) {
+        $errors[$field] = 'Обязательное поле';
+        return $errors;
+    }
+
+    if (!is_array($data[$field])) {
+        $errors[$field] = 'Поле должно быть массивом';
+        return $errors;
+    }
+
+    if (count($data[$field]) === 0) {
+        $errors[$field] = 'Необходимо указать хотя бы одну картинку';
+        return $errors;
+    }
+
+    foreach ($data[$field] as $i => $imagePath) {
+        $imageCheck = validateImagePath([$field => $imagePath], $field);
+
+        if (!empty($imageCheck)) {
+            $errors[$field . "[$i]"] = $imageCheck[$field]; // индексируем ошибки
+        }
+    }
+
+    return $errors;
+}
+
 
 /**
  * Валидация постов

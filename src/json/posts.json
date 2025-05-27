@@ -2,7 +2,23 @@
     {
         "id": 1,
         "user_id": 1,
-        "post_picture": "../../assets/Photo-1.png",
+        "post_pictures": [
+            "..\/..\/assets\/Frame-22.png",
+            "..\/..\/assets\/Frame-23.png",
+            "..\/..\/assets\/Frame-24.png",
+            "..\/..\/assets\/Frame-25.png",
+            "..\/..\/assets\/Frame-26.png",
+            "..\/..\/assets\/Frame-27.png",
+            "..\/..\/assets\/Frame-28.png",
+            "..\/..\/assets\/Frame-29.png",
+            "..\/..\/assets\/Frame-30.png",
+            "..\/..\/assets\/Frame-31.png",
+            "..\/..\/assets\/Frame-32.png",
+            "..\/..\/assets\/Frame-33.png",
+            "..\/..\/assets\/Frame-34.png",
+            "..\/..\/assets\/Frame-35.png",
+            "..\/..\/assets\/Frame-36.png"
+        ],
         "comment": "Так красиво сегодня на улице! Настоящая зима)) Вспоминается Бродский: «Поздно ночью, в уснувшей долине, на самом дне, в городке, занесенном снегом по ручку двери...»",
         "reactions": {
             "like": 203
@@ -12,11 +28,26 @@
     {
         "id": 2,
         "user_id": 2,
-        "post_picture": "../../assets/Photo-2.png",
+        "post_pictures": [
+            "..\/..\/assets\/Photo-2.png"
+        ],
         "comment": "",
         "reactions": {
             "like": 534
         },
         "timestamp": 1743516704
+    },
+    {
+        "id": 7,
+        "title": "xzcvxzc",
+        "user_id": 2,
+        "post_pictures": [
+            "..\/..\/assets\/images\/posts\/xzcvxzc-a222b.png"
+        ],
+        "comment": "",
+        "reactions": {
+            "like": 0
+        },
+        "timestamp": 1747838665
     }
 ]
